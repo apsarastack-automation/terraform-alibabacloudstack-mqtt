@@ -1,0 +1,100 @@
+{
+  "instance_name": {
+    "description": "The name of the MQTT instance to create.",
+    "type": "string",
+    "optional": false,
+    "i18n": {
+      "zh-Hans": "要创建的MQTT实例名称。",
+      "en-US": "The name of the MQTT instance to create."
+    }
+  },
+  "remark": {
+    "description": "The remark for the MQTT instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "MQTT实例的备注。",
+      "en-US": "The remark for the MQTT instance."
+    },
+    "default": ""
+  },
+  "max_conn": {
+    "description": "The maximum number of connections.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大连接数。",
+      "en-US": "The maximum number of connections."
+    },
+    "default": "1000"
+  },
+  "max_sub": {
+    "description": "The maximum number of subscriptions.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大订阅数。",
+      "en-US": "The maximum number of subscriptions."
+    },
+    "default": "10000"
+  },
+  "max_up_tps": {
+    "description": "The maximum upstream TPS.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大上行TPS。",
+      "en-US": "The maximum upstream TPS."
+    },
+    "default": "500"
+  },
+  "max_down_tps": {
+    "description": "The maximum downstream TPS.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大下行TPS。",
+      "en-US": "The maximum downstream TPS."
+    },
+    "default": "1000"
+  },
+  "independent_naming": {
+    "description": "Whether to use independent namespace.",
+    "type": "bool",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "是否使用独立命名空间。",
+      "en-US": "Whether to use independent namespace."
+    },
+    "default": "true"
+  },
+  "topic_definitions": {
+    "description": "Map of topic names to their configurations",
+    "type": "map(map(string))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "Topic名称到其配置的映射。",
+      "en-US": "Map of topic names to their configurations."
+    },
+    "default": "{}"
+  },
+  "group_definitions": {
+    "description": "Map of group IDs to their configurations",
+    "type": "map(map(string))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "Group ID到其配置的映射。",
+      "en-US": "Map of group IDs to their configurations."
+    },
+    "default": "{}"
+  },
+  "ons_name": {
+    "description": "The storage instance ID (RocketMQ/ONS instance ID).",
+    "type": "string",
+    "optional": false,
+    "i18n": {
+      "zh-Hans": "存储实例ID（RocketMQ/ONS 实例 ID）",
+      "en-US": "The storage instance ID (RocketMQ/ONS instance ID)."
+    }
+  }
+}

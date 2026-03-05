@@ -1,0 +1,196 @@
+{
+  "mqtt_instance_id": {
+    "description": "The ID of an existing MQTT instance. If set, no new instance will be created.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "现有MQTT实例的ID。如果设置，则不会创建新实例。",
+      "en-US": "The ID of an existing MQTT instance. If set, no new instance will be created."
+    },
+    "default": ""
+  },
+  "name": {
+    "description": "The name of the MQTT instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "MQTT实例的名称。",
+      "en-US": "The name of the MQTT instance."
+    },
+    "default": ""
+  },
+  "remark": {
+    "description": "The remark for the MQTT instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "MQTT实例的备注。",
+      "en-US": "The remark for the MQTT instance."
+    },
+    "default": ""
+  },
+  "max_conn": {
+    "description": "The maximum number of connections.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大连接数。",
+      "en-US": "The maximum number of connections."
+    },
+    "default": "1000"
+  },
+  "max_sub": {
+    "description": "The maximum number of subscriptions.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大订阅数。",
+      "en-US": "The maximum number of subscriptions."
+    },
+    "default": "10000"
+  },
+  "max_up_tps": {
+    "description": "The maximum upstream TPS.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大上行TPS。",
+      "en-US": "The maximum upstream TPS."
+    },
+    "default": "500"
+  },
+  "max_down_tps": {
+    "description": "The maximum downstream TPS.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "最大下行TPS。",
+      "en-US": "The maximum downstream TPS."
+    },
+    "default": "1000"
+  },
+  "independent_naming": {
+    "description": "Whether to use independent namespace.",
+    "type": "bool",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "是否使用独立命名空间。",
+      "en-US": "Whether to use independent namespace."
+    },
+    "default": "true"
+  },
+  "store_instance_id": {
+    "description": "The storage instance ID (RocketMQ instance ID). Required when creating a new MQTT instance and not creating ONS instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "存储实例ID（RocketMQ实例ID）。在创建新的MQTT实例且不创建ONS实例时为必填项。",
+      "en-US": "The storage instance ID (RocketMQ instance ID). Required when creating a new MQTT instance and not creating an ONS instance."
+    },
+    "default": "",
+    "i18n_old": {
+      "zh-Hans": "存储实例ID（RocketMQ实例ID）。创建新MQTT实例时需要。",
+      "en-US": "The storage instance ID (RocketMQ instance ID). Required when creating a new MQTT instance."
+    }
+  },
+  "topic_definitions": {
+    "description": "Map of topic names to their configurations",
+    "type": "map(object({\n    remark     = optional(string, \"\")\n    order_type = optional(string, \"0\")\n  }))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "Topic名称到其配置的映射。",
+      "en-US": "Map of topic names to their configurations."
+    },
+    "default": "{}"
+  },
+  "group_definitions": {
+    "description": "Map of group IDs to their configurations",
+    "type": "map(object({\n    remark = optional(string, \"\")\n  }))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "Group ID到其配置的映射。",
+      "en-US": "Map of group IDs to their configurations."
+    },
+    "default": "{}"
+  },
+  "create_ons_instance": {
+    "description": "Whether to create a new ONS (RocketMQ) instance. If true, ONS instance will be created and used as MQTT storage.",
+    "type": "bool",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "是否创建新的ONS（RocketMQ）实例。如果为true，则会创建ONS实例并用作MQTT存储。",
+      "en-US": "Whether to create a new ONS (RocketMQ) instance. If true, an ONS instance will be created and used as MQTT storage."
+    },
+    "default": "false"
+  },
+  "ons_name": {
+    "description": "The name of the ONS instance. If not set, defaults to '{var.name}MQ'.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "ONS 实例的名称。如果未设置，则默认为“{var.name}MQ”。",
+      "en-US": "The name of the ONS instance. If not set, defaults to '{var.name}MQ'."
+    },
+    "default": ""
+  },
+  "ons_remark": {
+    "description": "The remark for the ONS instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "ONS实例的备注。",
+      "en-US": "The remark for the ONS instance."
+    },
+    "default": "ONS instance for MQTT"
+  },
+  "ons_tps_receive_max": {
+    "description": "The maximum TPS for receiving messages in ONS instance.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "ONS实例接收消息的最大TPS",
+      "en-US": "The maximum TPS for receiving messages in the ONS instance."
+    },
+    "default": "500"
+  },
+  "ons_tps_send_max": {
+    "description": "The maximum TPS for sending messages in ONS instance.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "ONS 实例发送消息的最大 TPS",
+      "en-US": "The maximum TPS for sending messages in the ONS instance."
+    },
+    "default": "500"
+  },
+  "ons_topic_capacity": {
+    "description": "The topic capacity of the ONS instance.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "ONS实例的主题容量。",
+      "en-US": "The topic capacity of the ONS instance."
+    },
+    "default": "50"
+  },
+  "ons_cluster": {
+    "description": "The cluster name for the ONS instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "ONS 实例的集群名称。",
+      "en-US": "The cluster name for the ONS instance."
+    },
+    "default": "cluster1"
+  },
+  "ons_independent_naming": {
+    "description": "Whether to use independent naming for the ONS instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "是否为ONS实例使用独立命名。",
+      "en-US": "Whether to use independent naming for the ONS instance."
+    },
+    "default": "true"
+  }
+}

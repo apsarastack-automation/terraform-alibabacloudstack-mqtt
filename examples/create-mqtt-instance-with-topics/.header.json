@@ -1,0 +1,14 @@
+{
+  "title": {
+    "zh-Hans": "创建带Topic的MQTT实例",
+    "en-US": "Create MQTT Instance with Topics"
+  },
+  "overview": {
+    "zh-Hans": "此示例演示如何创建MQTT实例并配置多个Topic和Group。",
+    "en-US": "This example demonstrates how to create an MQTT instance and configure multiple topics and groups."
+  },
+  "description": {
+    "zh-Hans": "创建MQTT实例并配置Topic和Group的示例",
+    "en-US": "Example for creating MQTT instance with topics and groups"
+  }
+}

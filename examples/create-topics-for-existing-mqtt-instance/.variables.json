@@ -1,0 +1,31 @@
+{
+  "mqtt_instance_id": {
+    "description": "The ID of an existing MQTT instance",
+    "type": "string",
+    "optional": false,
+    "i18n": {
+      "zh-Hans": "现有MQTT实例的ID",
+      "en-US": "The ID of an existing MQTT instance"
+    }
+  },
+  "topic_definitions": {
+    "description": "Map of topic names to their configurations",
+    "type": "map(map(string))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "Topic名称到其配置的映射",
+      "en-US": "Map of topic names to their configurations"
+    },
+    "default": "{}"
+  },
+  "group_definitions": {
+    "description": "Map of group IDs to their configurations",
+    "type": "map(map(string))",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "Group ID到其配置的映射",
+      "en-US": "Map of group IDs to their configurations"
+    },
+    "default": "{}"
+  }
+}

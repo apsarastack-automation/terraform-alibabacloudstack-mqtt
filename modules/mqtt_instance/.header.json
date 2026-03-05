@@ -1,0 +1,14 @@
+{
+  "title": {
+    "zh-Hans": "MQTT实例模块",
+    "en-US": "MQTT Instance Module"
+  },
+  "overview": {
+    "zh-Hans": "该模块用于在阿里云 Stack 上创建MQTT实例、Topic和Group，支持动态Topic定义和Group管理。",
+    "en-US": "This module is used to create MQTT instances, topics, and groups on Alibaba Cloud Stack, supporting dynamic topic definitions and group management."
+  },
+  "description": {
+    "zh-Hans": "用于创建MQTT实例、Topic和Group的Terraform模块",
+    "en-US": "Terraform module for creating MQTT instances, topics, and groups"
+  }
+}

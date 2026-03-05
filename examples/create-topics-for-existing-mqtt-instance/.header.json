@@ -1,0 +1,14 @@
+{
+  "title": {
+    "zh-Hans": "为现有MQTT实例创建Topic和Group",
+    "en-US": "Create Topics and Groups for Existing MQTT Instance"
+  },
+  "overview": {
+    "zh-Hans": "此示例演示如何为已有的MQTT实例批量创建多个Topic和Group。",
+    "en-US": "This example demonstrates how to create multiple topics and groups for an existing MQTT instance in batch mode."
+  },
+  "description": {
+    "zh-Hans": "为现有MQTT实例创建Topic和Group的示例",
+    "en-US": "Example for creating topics and groups for existing MQTT instance"
+  }
+}

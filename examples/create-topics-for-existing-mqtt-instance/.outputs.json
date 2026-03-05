@@ -1,0 +1,30 @@
+{
+  "mqtt_instance_id": {
+    "description": "The ID of the MQTT instance.",
+    "i18n": {
+      "zh-Hans": "MQTT实例的ID。",
+      "en-US": "The ID of the MQTT instance."
+    }
+  },
+  "mqtt_instance_name": {
+    "description": "The name of the MQTT instance.",
+    "i18n": {
+      "zh-Hans": "MQTT实例的名称。",
+      "en-US": "The name of the MQTT instance."
+    }
+  },
+  "mqtt_topic_names": {
+    "description": "The names of the MQTT topics that were created.",
+    "i18n": {
+      "zh-Hans": "创建的MQTT Topic名称列表。",
+      "en-US": "The names of the MQTT topics that were created."
+    }
+  },
+  "mqtt_group_ids": {
+    "description": "The IDs of the MQTT groups that were created.",
+    "i18n": {
+      "zh-Hans": "创建的MQTT Group ID列表。",
+      "en-US": "The IDs of the MQTT groups that were created."
+    }
+  }
+}
