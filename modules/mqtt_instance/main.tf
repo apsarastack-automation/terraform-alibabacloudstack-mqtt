@@ -46,6 +46,7 @@ resource "alibabacloudstack_mqtt_instance" "default" {
   max_sub            = var.max_sub
   max_up_tps         = var.max_up_tps
   max_down_tps       = var.max_down_tps
+  cluster_name       = var.cluster_name
   independent_naming = var.independent_naming
   store_instance_id  = local.ons_instance_id
 

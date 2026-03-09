@@ -40,6 +40,12 @@ variable "max_down_tps" {
   default     = 1000
 }
 
+variable "cluster_name" {
+  description = "The name of mqtt cluster."
+  type        = string
+  default     = "mqtt4Private"
+}
+
 variable "independent_naming" {
   description = "Whether to use independent namespace."
   type        = bool
