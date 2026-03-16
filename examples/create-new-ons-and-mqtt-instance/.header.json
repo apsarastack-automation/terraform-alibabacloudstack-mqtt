@@ -1,0 +1,14 @@
+{
+  "title": {
+    "zh-Hans": "创建新的ONS和MQTT实例",
+    "en-US": "Create New ONS and MQTT Instance"
+  },
+  "overview": {
+    "zh-Hans": "此示例演示如何创建新的ONS（RocketMQ）实例作为存储后端，同时创建完整的MQTT实例并配置Topic和Group。",
+    "en-US": "This example demonstrates how to create a new ONS (RocketMQ) instance as the storage backend, along with a complete MQTT instance with topics and groups."
+  },
+  "description": {
+    "zh-Hans": "创建新的ONS和MQTT实例的示例",
+    "en-US": "Example for creating new ONS and MQTT instance"
+  }
+}

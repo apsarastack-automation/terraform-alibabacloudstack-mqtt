@@ -10,8 +10,45 @@ variable "remark" {
 }
 
 variable "ons_name" {
-  description = "The storage instance ID (RocketMQ/ONS instance ID)."
+  description = "The name of the ONS instance to create. If not set, defaults to '{instance_name}MQ'."
   type        = string
+  default     = ""
+}
+
+variable "ons_remark" {
+  description = "The remark for the ONS instance."
+  type        = string
+  default     = "ONS instance for MQTT"
+}
+
+variable "ons_tps_receive_max" {
+  description = "The maximum TPS for receiving messages in ONS instance."
+  type        = number
+  default     = 500
+}
+
+variable "ons_tps_send_max" {
+  description = "The maximum TPS for sending messages in ONS instance."
+  type        = number
+  default     = 500
+}
+
+variable "ons_topic_capacity" {
+  description = "The topic capacity of the ONS instance."
+  type        = number
+  default     = 50
+}
+
+variable "ons_cluster" {
+  description = "The cluster name for the ONS instance."
+  type        = string
+  default     = "cluster1"
+}
+
+variable "ons_independent_naming" {
+  description = "Whether to use independent naming for the ONS instance."
+  type        = string
+  default     = "true"
 }
 
 variable "max_conn" {

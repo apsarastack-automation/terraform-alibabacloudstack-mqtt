@@ -12,6 +12,10 @@ data "alibabacloudstack_ons_instances" "default" {
   ids = [coalesce(var.store_instance_id, "fake_id")]
 }
 
+data "alibabacloudstack_mqtt_clusters" "default" {
+  name_regex = var.cluster_name
+}
+
 # --- Control flags ---
 
 locals {
@@ -34,6 +38,7 @@ resource "alibabacloudstack_ons_instance" "default" {
 
 locals {
   ons_instance_id = local.create_ons_instance ? alibabacloudstack_ons_instance.default.0.id : (length(data.alibabacloudstack_ons_instances.default.ids) > 0 ? data.alibabacloudstack_ons_instances.default.ids.0 : "")
+  cluster_name = length(data.alibabacloudstack_mqtt_clusters.anyone.clusters) > 0 ? data.alibabacloudstack_mqtt_clusters.anyone.clusters.0.id:var.cluster_name
 }
 
 # --- MQTT Instance Resource ---
@@ -46,7 +51,7 @@ resource "alibabacloudstack_mqtt_instance" "default" {
   max_sub            = var.max_sub
   max_up_tps         = var.max_up_tps
   max_down_tps       = var.max_down_tps
-  cluster_name       = var.cluster_name
+  cluster_name       = local.cluster_name
   independent_naming = var.independent_naming
   store_instance_id  = local.ons_instance_id
 
