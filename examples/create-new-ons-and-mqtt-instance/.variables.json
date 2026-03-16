@@ -18,76 +18,6 @@
     },
     "default": ""
   },
-  "ons_name": {
-    "description": "The name of the ONS instance to create. If not set, defaults to '{instance_name}MQ'.",
-    "type": "string",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "要创建的ONS实例名称。默认为{instance_name}MQ。",
-      "en-US": "The name of the ONS instance to create. Defaults to '{instance_name}MQ'."
-    },
-    "default": ""
-  },
-  "ons_remark": {
-    "description": "The remark for the ONS instance.",
-    "type": "string",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "ONS实例的备注。",
-      "en-US": "The remark for the ONS instance."
-    },
-    "default": "ONS instance for MQTT"
-  },
-  "ons_tps_receive_max": {
-    "description": "The maximum TPS for receiving messages in ONS instance.",
-    "type": "number",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "ONS实例接收消息的最大TPS。",
-      "en-US": "The maximum TPS for receiving messages in ONS instance."
-    },
-    "default": "500"
-  },
-  "ons_tps_send_max": {
-    "description": "The maximum TPS for sending messages in ONS instance.",
-    "type": "number",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "ONS实例发送消息的最大TPS。",
-      "en-US": "The maximum TPS for sending messages in ONS instance."
-    },
-    "default": "500"
-  },
-  "ons_topic_capacity": {
-    "description": "The topic capacity of the ONS instance.",
-    "type": "number",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "ONS实例的Topic容量。",
-      "en-US": "The topic capacity of the ONS instance."
-    },
-    "default": "50"
-  },
-  "ons_cluster": {
-    "description": "The cluster name for the ONS instance.",
-    "type": "string",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "ONS实例的集群名称。",
-      "en-US": "The cluster name for the ONS instance."
-    },
-    "default": "cluster1"
-  },
-  "ons_independent_naming": {
-    "description": "Whether to use independent naming for the ONS instance.",
-    "type": "string",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "ONS实例是否使用独立命名。",
-      "en-US": "Whether to use independent naming for the ONS instance."
-    },
-    "default": "true"
-  },
   "max_conn": {
     "description": "The maximum number of connections.",
     "type": "number",
@@ -157,5 +87,14 @@
       "en-US": "Map of group IDs to their configurations."
     },
     "default": "{}"
+  },
+  "ons_name": {
+    "description": "The storage instance ID (RocketMQ/ONS instance ID).",
+    "type": "string",
+    "optional": false,
+    "i18n": {
+      "zh-Hans": "存储实例ID（RocketMQ/ONS 实例 ID）",
+      "en-US": "The storage instance ID (RocketMQ/ONS instance ID)."
+    }
   }
 }

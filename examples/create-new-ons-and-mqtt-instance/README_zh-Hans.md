@@ -1,15 +1,13 @@
-# 创建新的 ONS 和 MQTT 实例
+# 使用已有 ONS 实例创建 MQTT 实例
 
-本示例用于创建新的 ONS（RocketMQ）实例作为存储后端，同时创建新的 MQTT 实例并配置 Topic 和 Group。
-
-> 注意：本示例会创建新的 ONS/RocketMQ 实例和 MQTT 实例。
+本示例用于使用已存在的 ONS（RocketMQ）实例作为存储后端，创建新的 MQTT 实例并配置 Topic 和 Group。
 
 ## 使用方法
 
-1. 通过 `terraform.tfvars` 或命令行配置变量：
+2. 通过 `terraform.tfvars` 或命令行配置变量：
    ```hcl
    instance_name = "my-mqtt"
-   ons_name      = "my-ons"
+   ons_name      = "ons-xxxxxxxx"
    max_conn      = 2000
    max_sub       = 20000
    topic_definitions = {
@@ -28,14 +26,14 @@
      }
    }
    ```
-2. 执行以下命令：
+3. 执行以下命令：
    ```bash
    terraform init
    terraform plan
    terraform apply
    ```
 
-3. 清理资源：
+4. 清理资源：
    ```bash
    terraform destroy
    ```
@@ -62,24 +60,19 @@
 
 | 名称 | 类型 |
 |------|------|
-| ONS 实例 | alibabacloudstack_ons_instance |
 | MQTT 实例 | alibabacloudstack_mqtt_instance |
 | MQTT Topic | alibabacloudstack_mqtt_topic |
 | MQTT Group | alibabacloudstack_mqtt_group |
+
+> 注意：ONS/RocketMQ 实例**不在本配置中管理**（假定已存在）。
 
 ## 输入变量
 
 | 名称 | 描述 | 类型 | 示例值 | 必需 |
 |------|------|------|--------|------|
-| instance_name | 要创建的 MQTT 实例名称。 | string | "tfmqtt1" | 是 |
+| instance_name | 要创建的新 MQTT 实例名称。 | string | "tfmqtt1" | 是 |
+| ons_name | 用作存储后端的已有 ONS/RocketMQ 实例 ID。 | string | "ons-xxxxxxxx" | 是 |
 | remark | MQTT 实例的备注。 | string | "测试实例" | 否 |
-| ons_name | 要创建的 ONS 实例名称。默认为 `{instance_name}MQ`。 | string | "my-ons" | 否 |
-| ons_remark | ONS 实例的备注。 | string | "ONS instance for MQTT" | 否 |
-| ons_tps_receive_max | ONS 实例接收消息的最大 TPS。 | number | 500 | 否 |
-| ons_tps_send_max | ONS 实例发送消息的最大 TPS。 | number | 500 | 否 |
-| ons_topic_capacity | ONS 实例的 Topic 容量。 | number | 50 | 否 |
-| ons_cluster | ONS 实例的集群名称。 | string | "cluster1" | 否 |
-| ons_independent_naming | ONS 实例是否使用独立命名。 | string | "true" | 否 |
 | max_conn | 最大连接数。 | number | 1000 | 否 |
 | max_sub | 最大订阅数。 | number | 10000 | 否 |
 | max_up_tps | 最大上行 TPS。 | number | 500 | 否 |
@@ -125,6 +118,6 @@
 
 ## 注意事项
 
-- 本示例会创建新的 ONS 实例，请确保您有足够的资源配额。
+- `ons_name` 对应的 ONS 实例必须已在您的账号中存在。
 - Group ID 必须以 `GID_` 或 `GID-` 开头。
 - Topic 名称必须为 3-64 个字符，可包含字母、数字、连字符(-)、下划线(_)和正斜杠(/)。
