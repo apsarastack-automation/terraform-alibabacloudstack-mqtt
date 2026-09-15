@@ -16,6 +16,15 @@ data "alibabacloudstack_mqtt_clusters" "default" {
   name_regex = var.cluster_name
 }
 
+# Guard against non-deterministic cluster resolution: name_regex may match
+# multiple clusters, and picking .clusters.0 could drift between plans.
+check "single_mqtt_cluster_match" {
+  assert {
+    condition     = length(data.alibabacloudstack_mqtt_clusters.default.clusters) <= 1
+    error_message = "name_regex '${var.cluster_name}' matched ${length(data.alibabacloudstack_mqtt_clusters.default.clusters)} MQTT clusters; use a more specific name to avoid drift."
+  }
+}
+
 # --- Control flags ---
 
 locals {
