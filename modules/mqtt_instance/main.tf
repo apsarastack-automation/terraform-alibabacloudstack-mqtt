@@ -38,7 +38,7 @@ resource "alibabacloudstack_ons_instance" "default" {
 
 locals {
   ons_instance_id = local.create_ons_instance ? alibabacloudstack_ons_instance.default.0.id : (length(data.alibabacloudstack_ons_instances.default.ids) > 0 ? data.alibabacloudstack_ons_instances.default.ids.0 : "")
-  cluster_name = length(data.alibabacloudstack_mqtt_clusters.anyone.clusters) > 0 ? data.alibabacloudstack_mqtt_clusters.anyone.clusters.0.id:var.cluster_name
+  cluster_name    = length(data.alibabacloudstack_mqtt_clusters.default.clusters) > 0 ? data.alibabacloudstack_mqtt_clusters.default.clusters.0.id : var.cluster_name
 }
 
 # --- MQTT Instance Resource ---

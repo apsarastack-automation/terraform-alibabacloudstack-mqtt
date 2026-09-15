@@ -87,11 +87,7 @@
       "zh-Hans": "存储实例ID（RocketMQ实例ID）。在创建新的MQTT实例且不创建ONS实例时为必填项。",
       "en-US": "The storage instance ID (RocketMQ instance ID). Required when creating a new MQTT instance and not creating an ONS instance."
     },
-    "default": "",
-    "i18n_old": {
-      "zh-Hans": "存储实例ID（RocketMQ实例ID）。创建新MQTT实例时需要。",
-      "en-US": "The storage instance ID (RocketMQ instance ID). Required when creating a new MQTT instance."
-    }
+    "default": ""
   },
   "topic_definitions": {
     "description": "Map of topic names to their configurations",
@@ -192,5 +188,15 @@
       "en-US": "Whether to use independent naming for the ONS instance."
     },
     "default": "true"
+  },
+  "cluster_name": {
+    "description": "The name of mqtt cluster.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "MQTT集群的名称。",
+      "en-US": "The name of the MQTT cluster."
+    },
+    "default": "mqtt4Private"
   }
 }
