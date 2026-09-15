@@ -69,7 +69,7 @@ variable "ons_name" {
 variable "ons_remark" {
   description = "The remark for the ONS instance."
   type        = string
-  default     = "ONS instance for MQTT"
+  default     = "ONS-instance-for-MQTT"
 }
 
 variable "ons_tps_receive_max" {

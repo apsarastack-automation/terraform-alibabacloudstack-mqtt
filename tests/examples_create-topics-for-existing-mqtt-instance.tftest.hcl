@@ -28,20 +28,20 @@ run "validate" {
     mqtt_instance_id = run.setup_mqtt_instance.mqtt_instance_id
     topic_definitions = {
       topic1 = {
-        remark     = "Topic 1"
+        remark     = "Topic-1"
         order_type = "0"
       }
       topic2 = {
-        remark     = "Topic 2"
+        remark     = "Topic-2"
         order_type = "1"
       }
     }
     group_definitions = {
       "GID_consumer1" = {
-        remark = "Consumer group 1"
+        remark = "Consumer-group-1"
       }
       "GID_consumer2" = {
-        remark = "Consumer group 2"
+        remark = "Consumer-group-2"
       }
     }
   }

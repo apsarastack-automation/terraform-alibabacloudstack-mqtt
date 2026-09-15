@@ -5,5 +5,5 @@ resource "alibabacloudstack_ons_instance" "existing" {
   cluster            = "cluster1"
   independent_naming = "true"
   name               = "${var.name}-ons"
-  remark             = "ONS instance for MQTT testing"
+  remark             = "ONS-instance-for-MQTT-testing"
 }

@@ -8,13 +8,13 @@ run "validate" {
     ons_name      = "tfons"
     topic_definitions = {
       test_topic = {
-        remark     = "Test topic"
+        remark     = "Test-topic"
         order_type = "0"
       }
     }
     group_definitions = {
       "GID_test_group" = {
-        remark = "Test group"
+        remark = "Test-group"
       }
     }
   }
